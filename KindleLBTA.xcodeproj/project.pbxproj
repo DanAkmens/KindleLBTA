@@ -13,6 +13,8 @@
 		6F79712A227D8C7300CCE5C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F797128227D8C7300CCE5C0 /* LaunchScreen.storyboard */; };
 		6F797132227DEB7900CCE5C0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F797131227DEB7900CCE5C0 /* Models.swift */; };
 		6FCFA9B02284C20700E14A53 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFA9AF2284C20700E14A53 /* BookCell.swift */; };
+		6FCFA9B722887D8800E14A53 /* BookPagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFA9B622887D8800E14A53 /* BookPagerController.swift */; };
+		6FCFA9B92288C2EB00E14A53 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFA9B82288C2EB00E14A53 /* PageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6F79712B227D8C7300CCE5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F797131227DEB7900CCE5C0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		6FCFA9AF2284C20700E14A53 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		6FCFA9B622887D8800E14A53 /* BookPagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPagerController.swift; sourceTree = "<group>"; };
+		6FCFA9B82288C2EB00E14A53 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +63,12 @@
 				6F79711F227D8C7200CCE5C0 /* AppDelegate.swift */,
 				6F797121227D8C7200CCE5C0 /* ViewController.swift */,
 				6FCFA9AF2284C20700E14A53 /* BookCell.swift */,
+				6FCFA9B622887D8800E14A53 /* BookPagerController.swift */,
 				6F797126227D8C7300CCE5C0 /* Assets.xcassets */,
 				6F797131227DEB7900CCE5C0 /* Models.swift */,
 				6F797128227D8C7300CCE5C0 /* LaunchScreen.storyboard */,
 				6F79712B227D8C7300CCE5C0 /* Info.plist */,
+				6FCFA9B82288C2EB00E14A53 /* PageCell.swift */,
 			);
 			path = KindleLBTA;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FCFA9B02284C20700E14A53 /* BookCell.swift in Sources */,
+				6FCFA9B722887D8800E14A53 /* BookPagerController.swift in Sources */,
+				6FCFA9B92288C2EB00E14A53 /* PageCell.swift in Sources */,
 				6F797132227DEB7900CCE5C0 /* Models.swift in Sources */,
 				6F797122227D8C7200CCE5C0 /* ViewController.swift in Sources */,
 				6F797120227D8C7200CCE5C0 /* AppDelegate.swift in Sources */,
