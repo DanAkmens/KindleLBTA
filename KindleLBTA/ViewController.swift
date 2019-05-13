@@ -30,10 +30,18 @@ class ViewController: UITableViewController {
     
     //This function executes when you select specific book
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedBook = self.books?[indexPath.row]
+        // print(book?.title)
+        // return
+        
         //print(1,2,3)
         // Now we want to present viewController
         let layout = UICollectionViewFlowLayout()
         let bookPagerController = BookPagerController(collectionViewLayout: layout)
+        
+        bookPagerController.book = selectedBook
+        
         let navController = UINavigationController(rootViewController: bookPagerController)
         present(navController, animated: true, completion: nil)
     }
