@@ -25,7 +25,56 @@ class ViewController: UITableViewController {
        
         // can provide custom code starting here
         
-        setUpBooks()
+        
+        fetchBooks()
+    }
+    
+    func fetchBooks() {
+        print("Fetching books...")
+        if let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json") {
+            
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                
+                if let error = error {
+                    print("Failed to fetch external json books: ", error)
+                    return
+                }
+                
+                guard let data = data else { return }
+                
+                do {
+                    
+                    let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+                    guard let bookDictionaries = json as? [[String: Any]] else { return }
+                
+                    self.books = []
+                    for bookDictionary in bookDictionaries {
+                        
+                        if let title = bookDictionary["title"] as? String,
+                            let author = bookDictionary["author"] as? String{
+                            
+                            let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "Steve_Jobs"), pages: [])
+                            print(book.title)
+                            
+                            self.books?.append(book)
+                        }
+                    }
+                    
+                    // print("All of our books: ", self.books)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                    
+                  //  print(json)
+                } catch let jsonError {
+                    print("Failed to parse JSON properly: ", jsonError)
+                }
+            
+            }.resume()
+            
+        }
+       
     }
     
     //This function executes when you select specific book
@@ -69,6 +118,8 @@ class ViewController: UITableViewController {
        return 0  // initially count is 0, after the view completes loading  setUpBooks()
     }
     
+    // example
+    /*
     func setUpBooks() {
         let page1 = Page(number: 1, text: "Text for the first page")
         let page2 = Page(number: 2, text: "This is text for second page")
@@ -86,7 +137,8 @@ class ViewController: UITableViewController {
             ])
         
         self.books = [book, book2]
-
+ 
     }
+ */
 }
 
