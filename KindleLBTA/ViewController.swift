@@ -50,17 +50,11 @@ class ViewController: UITableViewController {
                     self.books = []
                     for bookDictionary in bookDictionaries {
                         
-                        if let title = bookDictionary["title"] as? String,
-                            let author = bookDictionary["author"] as? String{
-                            
-                            let book = Book(title: title, author: author, image: #imageLiteral(resourceName: "Steve_Jobs"), pages: [])
-                            print(book.title)
-                            
-                            self.books?.append(book)
-                        }
+                        let book = Book(dictionary: bookDictionary)
+                        self.books?.append(book)
+                        
                     }
                     
-                    // print("All of our books: ", self.books)
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -72,9 +66,7 @@ class ViewController: UITableViewController {
                 }
             
             }.resume()
-            
         }
-       
     }
     
     //This function executes when you select specific book
